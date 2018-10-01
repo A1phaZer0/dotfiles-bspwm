@@ -1,0 +1,1 @@
+SUBSYSTEM=="drm", ACTION=="change", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/motoko/.Xauthority", RUN+="/bin/bash /home/motoko/.config/bspwm/multimonitor_setup.sh"

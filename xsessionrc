@@ -1,0 +1,10 @@
+# This file goes into ~/
+# feh --bg-fill '/home/motoko/Pictures/wallpapers/1.jpg' --bg-fill ~/Pictures/wallpapers/2.jpg
+xset fp rehash
+xrdb -merge ~/.Xresources # update x resources db
+xset fp rehash
+xmodmap ~/.config/superkey_map
+compton --config ~/.config/compton/compton.conf &>/dev/null &
+# unclutter -grab -noevents -root &
+# use unclutter-xfixes instead of unclutter in case of i3lock error
+unclutter -b --ignore-scrolling

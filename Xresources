@@ -1,0 +1,58 @@
+!URxvt*depth: 32 # disabled for ranger to preview pics
+!URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
+!URxvt*boldFont:-gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
+!URxvt*font:xft:3270Medium Nerd Font Mono:size=16:regular:antialias=true:style=Medium
+!URxvt*boldFont:xft:3270Medium Nerd Font Mono:size=16:bold:antialias=true:style=Medium
+URxvt*font:xft:TerminessTTF Nerd Font Mono:size=16:regular:antialias=true:style=Medium
+URxvt*boldFont:xft:TerminessTTF Nerd Font Mono:size=16:bold:antialias=true:style=Medium
+URxvt*scrollBar: false
+URxvt*perl-ext-common: 
+URxvt*iso14755: false
+URxvt*iso14755_52: false
+URxvt*termName: rxvt-256color
+URxvt*saveLines: 65535
+URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
+URxvt*urgentOnBell: false
+!URxvt*internalBorder: 0
+!URxvt*externalBorder: 0
+!URxvt*borderLess: false
+!URxvt*fading: 30
+!URxvt*letterSpace: -1
+
+URxvt*background: #3F3F3F
+URxvt*foreground: #DBDBDB
+
+! BLK
+URxvt*color0:   #282A2E
+URxvt*color8:   #6E7271
+! RED
+URxvt*color1:   #A54242
+URxvt*color9:   #CC6666
+! GRE
+URxvt*color2:   #8C9440
+URxvt*color10:  #B5BD68
+! YEL
+URxvt*color3:   #DE935F
+URxvt*color11:  #F0C674
+! BLU
+URxvt*color4:   #5F819D
+URxvt*color12:  #81A2BE
+! MAG
+URxvt*color5:   #85678F
+URxvt*color13:  #B294BB
+! CYA
+URxvt*color6:   #5E8D87
+URxvt*color14:  #8ABEB7
+! WHI
+URxvt*color7:   #6C7A80
+URxvt*color15:  #C5C8C6
+
+Xft.autohint: 0
+!Xft.lcdfilter: lcddefault
+!Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+!Xft.rgba: rgb
+Xft.rgba: none
+Xft.dpi: 96
