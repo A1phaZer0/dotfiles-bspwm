@@ -1,0 +1,2 @@
+SUBSYSTEM=="input", SUBSYSTEMS=="usb", ACTION=="change", ENV{XAUTHORITY}="/home/motoko/.Xauthority", RUN+="/bin/bash /home/motoko/.config/mykeymaps/xmodmap.sh"
+
