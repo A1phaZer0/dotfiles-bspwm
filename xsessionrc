@@ -3,8 +3,12 @@
 xset fp rehash
 xrdb -merge ~/.Xresources # update x resources db
 xset fp rehash
+~/.config/mykeymaps/xmodmap.sh
+~/.config/startss.sh
 xmodmap ~/.config/superkey_map
 compton --config ~/.config/compton/compton.conf &>/dev/null &
 # unclutter -grab -noevents -root &
 # use unclutter-xfixes instead of unclutter in case of i3lock error
 unclutter -b --ignore-scrolling
+# disable touchpad while using keyboard
+syndaemon -i 2 -d -t
