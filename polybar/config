@@ -65,10 +65,9 @@ modules-right = pulseaudio-tail memory cpu wlan battery date
 ;tray-transparent = true
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
+; no fullscreen overlay
+wm-restack = bspwm
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
