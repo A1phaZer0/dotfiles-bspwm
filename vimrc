@@ -93,6 +93,9 @@ let g:ycm_filetype_whitelist = {
 " leaves semantic engine. default is 2.
 " let g:ycm_min_num_of_chars_for_completion = 99
 
+" tagbar should be sorted by sourecode order
+let g:tagbar_sort = 0
+
 
 " NERDTree auto close if there's only nerdtree window exist
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
