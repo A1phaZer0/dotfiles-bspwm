@@ -3,8 +3,10 @@
 !URxvt*boldFont:-gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
 !URxvt*font:xft:3270Medium Nerd Font Mono:size=16:regular:antialias=true:style=Medium
 !URxvt*boldFont:xft:3270Medium Nerd Font Mono:size=16:bold:antialias=true:style=Medium
-URxvt*font:xft:TerminessTTF Nerd Font Mono:size=16:regular:antialias=true:style=Medium
-URxvt*boldFont:xft:TerminessTTF Nerd Font Mono:size=16:bold:antialias=true:style=Medium
+!URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:regular:antialias=true:style=Medium
+!URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:bold:antialias=true:style=Medium
+URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:regular:antialias=true:style=Medium
+URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:bold:antialias=true:style=Medium
 URxvt*scrollBar: false
 URxvt*perl-ext-common: 
 URxvt*iso14755: false
@@ -24,7 +26,8 @@ URxvt*foreground: #DBDBDB
 
 ! BLK
 URxvt*color0:   #282A2E
-URxvt*color8:   #6E7271
+!URxvt*color8:   #6E7271
+URxvt*color8:   #776171
 ! RED
 URxvt*color1:   #A54242
 URxvt*color9:   #CC6666

@@ -114,7 +114,8 @@ polybar top-bar &
 
 # set primary monitor
 delay
-bspc config -m $PRIM_MON top_padding 32
+bspc config -m $PRIM_MON top_padding 20
+#bspc config -m $PRIM_MON top_padding 32
 bspc config -m $PRIM_MON bottom_padding 0
 bspc config -m $PRIM_MON left_padding 0
 bspc config -m $PRIM_MON right_padding 0

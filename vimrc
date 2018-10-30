@@ -21,6 +21,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'Yggdroot/indentLine'
 Plugin 'SirVer/ultisnips'
+Plugin 'vimwiki/vimwiki'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 " Plugin 'w0ng/vim-hybrid'
 " Plugin 'morhetz/gruvbox'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -91,6 +94,23 @@ let g:ycm_filetype_whitelist = {
 " let g:ycm_min_num_of_chars_for_completion = 99
 
 
+" NERDTree auto close if there's only nerdtree window exist
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd  filetype  nerdtree silent! highlight ' . a:extension .' ctermbg='.  a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd  filetype nerdtree syn match ' . a:extension .' #^\s\+.*'.  a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('.c', 'Magenta', 'NONE', 'NONE', 'NONE')
+call NERDTreeHighlightFile('.h', 'yellow', 'none', 'none', 'none')
+call NERDTreeHighlightFile('.md', 'blue', 'none', 'none', 'none')
+call NERDTreeHighlightFile('.cc', 'Magenta', 'none', 'none', 'none')
+call NERDTreeHighlightFile('.cpp','Magenta', 'none', 'none', 'none')
+call NERDTreeHighlightFile('Makefile', 'Red', 'none', 'none', 'none')
+call NERDTreeHighlightFile('.py', 'cyan', 'none', 'none', 'none')
+
+
 set completeopt=menuone
 set tabstop=8		"use tab which 8 spaces long
 set shiftwidth=8
@@ -149,7 +169,7 @@ autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 	"map key of exchanging two windows
 		nmap .x <C-W>x
 "map key of openning nerdtree
-	nmap .2 :NERDTree<CR>
+	nmap .2 :NERDTreeToggle<CR>
 "map key of openning tagbar
 	nmap .3 :TagbarToggle<CR>
 "map key of openning taglist

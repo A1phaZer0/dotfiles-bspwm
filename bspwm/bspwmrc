@@ -30,7 +30,7 @@ WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
 
 # global border/gap
 bspc config border_width  2
-bspc config window_gap    8
+bspc config window_gap    20 
 bspc config split_ratio   0.50
 
 # border color
@@ -46,10 +46,13 @@ bspc config paddingless_monocle  false
 bspc config single_monocle       false
 
 
+bspc config click_to_focus button3
+
+
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-
+/home/motoko/.config/mykeymaps/xmodmap.sh
