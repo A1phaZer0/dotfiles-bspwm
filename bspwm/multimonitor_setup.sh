@@ -9,7 +9,7 @@ PRIM_MON=$( xrandr -q | grep primary | awk '{print $1}' )
 OTHR_MON=()
 
 # output rules for monitors
-# RULE_1="xrandr --output DP-3 --mode 1920x1080 --left-of eDP-1 --rotate right"
+# RULE_1="xrandr --output DP-3 --mode 1920x1080 --left-of LVDS-1 --rotate right"
 
 function reset_prim_monitor()
 {
@@ -37,7 +37,7 @@ function add_monitor()
 	bspc config -m $1 right_padding 0
 	# add new desktop if new monitor detected first time
 	# or just move its desktops back
-	if [[ $1 == 'DP-3' ]] ; then
+	if [[ $1 == 'DP-1-1' ]] ; then
 		if [[ $( bspc query -m $PRIM_MON -D --names | wc -l ) -eq 5 ]] ; then
 			bspc monitor $1 -d term-2 pwn-2 web-2 vm-2 misc-2
 		else
@@ -57,14 +57,14 @@ function add_monitor()
 	fi
 
 	delay
-	feh --bg-fill '/home/motoko/Pictures/wallpapers/6.png' --bg-fill '/home/motoko/Pictures/wallpapers/cc-wallpaper-desktop.png'
+	feh --bg-fill '/home/motoko/Pictures/wallpapers/1.jpg' --bg-fill '/home/motoko/Pictures/wallpapers/2.jpg'
 }
 
 # when monitor removed
 function remove_monitor()
 {
 
-	if [[ $1 == 'DP-3' ]] ; then
+	if [[ $1 == 'DP-1-1' ]] ; then
 		desktops=( "term-2" "pwn-2" "web-2" "vm-2" "misc-2" )
 	fi
 	for dt in ${desktops[@]} ; do
@@ -75,11 +75,11 @@ function remove_monitor()
 	xrandr --output $1 --off
 	#bspc monitor $1 -r
 	delay
-	feh --bg-fill '/home/motoko/Pictures/wallpapers/6.png' --bg-fill /home/motoko/Pictures/wallpapers/cc-wallpaper-desktop.png
+	feh --bg-fill '/home/motoko/Pictures/wallpapers/1.jpg' --bg-fill /home/motoko/Pictures/wallpapers/2.jpg
 }
 
 delay
-feh --bg-fill '/home/motoko/Pictures/wallpapers/6.png' --bg-fill /home/motoko/Pictures/wallpapers/cc-wallpaper-desktop.png
+feh --bg-fill '/home/motoko/Pictures/wallpapers/1.jpg' --bg-fill /home/motoko/Pictures/wallpapers/2.jpg
 
 # set other monitors
 CURR_MON=''
@@ -92,14 +92,15 @@ done
 # add new monitors
 [[ -e /tmp/bspwm_monitors_connected ]] && CONN_MON=$(</tmp/bspwm_monitors_connected)
 for mon in ${OTHR_MON[@]}; do
-	[[ $mon == 'DP-3' ]] && [[ ! $CONN_MON =~ 'DP-3' ]] && add_monitor $mon "1920x1080" "--left-of" "eDP-1" "--rotate right"
+	[[ $mon == 'DP-1-1' ]] && [[ ! $CONN_MON =~ 'DP-1-1' ]] && add_monitor $mon "1920x1080" "--left-of" $PRIM_MON ""
+	# [[ $mon == 'DP-1-1' ]] && [[ ! $CONN_MON =~ 'DP-1-1' ]] && add_monitor $mon "1920x1080" "--left-of" $PRIM_MON "--rotate left"
 done
 
 
 # remove monitors
 [[ -e /tmp/bspwm_monitors_connected ]] && IFS=: read -ra CONN_MON <<< $(</tmp/bspwm_monitors_connected)
 for mon in ${CONN_MON[@]}; do 
-	[[ $mon == 'DP-3' ]] && [[ ! $CURR_MON =~ 'DP-3' ]] && remove_monitor $mon
+	[[ $mon == 'DP-1-1' ]] && [[ ! $CURR_MON =~ 'DP-1-1' ]] && remove_monitor $mon
 done
 
 
@@ -109,6 +110,7 @@ echo $CURR_MON > /tmp/bspwm_monitors_connected
 
 
 # setup bar
+export PRIM_MON
 [[ -n $(pidof polybar) ]] && polybar-msg cmd restart
 polybar top-bar &
 

@@ -1,5 +1,5 @@
 ! Enabled modi
-rofi.modi:                           run,drun,window
+rofi.modi:                           run,drun,window,file_browser
 ! Window opacity
 rofi.opacity:                        0
 ! Window width
@@ -178,3 +178,5 @@ rofi.display-window:                 WINDOW
 rofi.display-windowcd:               
 ! The display name of this browser
 rofi.display-combi:                  
+! The display name of this browser
+rofi.display-file_browser:	     OPEN

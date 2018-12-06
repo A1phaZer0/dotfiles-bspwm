@@ -3,7 +3,8 @@
 sxhkd &
 
 # initial desktops
-bspc monitor eDP-1 -d term-1 pwn-1 web-1 vm-1 misc-1 term-2 pwn-2 web-2 vm-2 misc-2
+PRIM_MON=$( xrandr -q | grep primary | awk '{print $1}' )
+bspc monitor $PRIM_MON -d term-1 pwn-1 web-1 vm-1 misc-1 term-2 pwn-2 web-2 vm-2 misc-2
 
 # monitor 
 # MUST be true otherwise the removed monitor will prevent moving the last
