@@ -178,10 +178,36 @@ autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 "map key of openning taglist
 	"nmap \3 :TlistToggle<CR>
 "map hotkey of omnicppcomplation, use this to generate tags file 
-	map <C-F11> :!ctags -R  --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+	"map <C-F11> :!ctags -R  --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 "map key of changing cursorline
 	"map ,c :setlocal cursorline<CR>
 	"map ,d :setlocal nocursorline<CR>
+
+" cscope
+if has("cscope")
+        set csprg=/usr/bin/cscope
+        set csto=0
+	set cst
+	"set nocsverb
+	" add any database in current directory
+	"if filereadable("cscope.out")
+	"        cs add cscope.out
+	" else add database pointed to by environment
+	"elseif $CSCOPE_DB != ""
+        	cs add $CSCOPE_DB
+        "endif
+        set csverb
+endif
+" cscope keymap
+nmap .s :cs find s <C-R>=expand("<cword>")<CR><CR> "find symbol
+nmap .g :cs find g <C-R>=expand("<cword>")<CR><CR> "find definition
+nmap .x :cs find c <C-R>=expand("<cword>")<CR><CR> "find cross reference
+nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR> "find assignments to
+nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR> "find this egrep pattern
+nmap <C-@>f :cs find f <C-R>=expand("<cword>")<CR><CR> "find this file
+nmap <C-@>i :cs find i ^<C-R>=expand("<cword>")<CR>$<CR> " find file #include current file
+nmap .d :cs find d <C-R>=expand("<cword>")<CR><CR> "find called functions
+
 	
 
 
@@ -197,12 +223,12 @@ nmap <leader>d :bdelete<CR>
 
 
 "map of Alternate Header file plugin a.vim
-nmap ,s :AS<CR>
-nmap ,v :AV<CR>
-nmap ,a :A<CR>
-nmap ,w :IHV<CR>
-nmap ,e :IHS<CR>
-nmap ,r :IH<CR>
+" nmap ,s :AS<CR>
+" nmap ,v :AV<CR>
+" nmap ,a :A<CR>
+" nmap ,w :IHV<CR>
+" nmap ,e :IHS<CR>
+" nmap ,r :IH<CR>
 
 "map of change shiftwidth to 2/4/8 spaces
 nmap ,2 :set sw=2<CR> gg=G<CR>
