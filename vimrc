@@ -199,14 +199,22 @@ if has("cscope")
         set csverb
 endif
 " cscope keymap
-nmap .s :cs find s <C-R>=expand("<cword>")<CR><CR> "find symbol
-nmap .g :cs find g <C-R>=expand("<cword>")<CR><CR> "find definition
-nmap .x :cs find c <C-R>=expand("<cword>")<CR><CR> "find cross reference
-nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR> "find assignments to
-nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR> "find this egrep pattern
-nmap <C-@>f :cs find f <C-R>=expand("<cword>")<CR><CR> "find this file
-nmap <C-@>i :cs find i ^<C-R>=expand("<cword>")<CR>$<CR> " find file #include current file
-nmap .d :cs find d <C-R>=expand("<cword>")<CR><CR> "find called functions
+" find symbol
+nmap .s :cs find s <C-R>=expand("<cword>")<CR><CR>
+" find definition
+nmap .d :cs find g <C-R>=expand("<cword>")<CR><CR>
+" find cross reference
+nmap .x :cs find c <C-R>=expand("<cword>")<CR><CR>
+" find assignments to
+nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+" find this egrep pattern
+nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+" find this file
+nmap <C-@>f :cs find f <C-R>=expand("<cword>")<CR><CR>
+" find file #include current file
+nmap <C-@>i :cs find i ^<C-R>=expand("<cword>")<CR>$<CR>
+" find called functions
+nmap .f :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 	
 
