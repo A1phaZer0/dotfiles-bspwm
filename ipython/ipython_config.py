@@ -1,12 +1,9 @@
-from base16 import Base16Style, overrides
-from IPython.terminal import interactiveshell
+# Need export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/base16
 
-def get_style_by_name(name, original=interactiveshell.get_style_by_name):
-        return Base16Style if name == 'base16' else original(name)
-interactiveshell.get_style_by_name = get_style_by_name
-
-c.TerminalInteractiveShell.highlighting_style = 'base16'
-c.TerminalInteractiveShell.highlighting_style_overrides = overrides
+import importlib
+theme = importlib.import_module("base16-default-dark")
+c.TerminalInteractiveShell.highlighting_style = theme.Base16Style
+c.TerminalInteractiveShell.highlighting_style_overrides = theme.overrides
 # Configuration file for ipython.
 
 #------------------------------------------------------------------------------
