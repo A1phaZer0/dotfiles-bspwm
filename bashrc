@@ -47,7 +47,7 @@ BWHITE="\[\e[1;37m\]"
 
 COFF="\[\e[0m\]"
 
-#  colorize git_ps1
+#  colorize git_ps1 and python virtual env
 
 colorize() 
 {
@@ -73,6 +73,17 @@ colorize()
 		fi
 		PS1="$INFO $GIT \$ "
 	fi
+
+	#
+	# Python virtual env
+	#
+	if test -z "$VIRTUAL_ENV" ; then
+	        PYTHON_VIRTUALENV=""
+	else
+	        PYTHON_VIRTUALENV="${YELLOW}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+	fi
+
+	PS1=$PYTHON_VIRTUALENV$PS1
 }
 
 PROMPT_COMMAND=colorize
@@ -134,3 +145,7 @@ function ta ()
     cscope -R -b
     export CSCOPE_DB=$PWD/cscope.out
 }
+
+export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/base16
+export WORKON_HOME=~/.python_virtual_env
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
