@@ -133,7 +133,8 @@ printf "\033]4;22;rgb:69/C7/81\033\\"
 printf "\033]4;23;rgb:9C/B3/BA\033\\"
 printf "\033]4;24;rgb:00/D5/FF\033\\"
 
-function ta ()
+# Generate cscope file
+function csg()
 {
     #clean older info
     rm -rf tags
@@ -143,6 +144,11 @@ function ta ()
     find $PWD | egrep -i "\.(c|h|cpp)$" > cscope.files
     #ctags -R . *.c *.h *.cpp --tag-relative=no ./
     cscope -R -b
+    export CSCOPE_DB=$PWD/cscope.out
+}
+# Export cscope file
+function cse()
+{
     export CSCOPE_DB=$PWD/cscope.out
 }
 
