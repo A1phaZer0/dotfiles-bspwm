@@ -93,7 +93,7 @@ ccffcc	 //Highlight color 2
 0000ff	 //Foreign node
 cd7f19	 //Normal edge
 008000	 //Yes edge
-00009f	 //No edge
+616ae7	 //No edge
 ff00ff	 //Highlighted edge
 ffff00	 //Current edge
 [MISC]
