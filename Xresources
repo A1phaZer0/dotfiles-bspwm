@@ -5,8 +5,8 @@
 !URxvt*boldFont:xft:3270Medium Nerd Font Mono:size=16:bold:antialias=true:style=Medium
 !URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:regular:antialias=true:style=Medium
 !URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:bold:antialias=true:style=Medium
-URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:regular:antialias=true:style=Medium
-URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:bold:antialias=true:style=Medium
+URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=13:regular:antialias=true:style=Medium
+URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=13:bold:antialias=true:style=Medium
 URxvt*scrollBar: false
 URxvt*perl-ext-common: 
 URxvt*iso14755: false
@@ -50,12 +50,12 @@ URxvt*color14:  #8ABEB7
 URxvt*color7:   #6C7A80
 URxvt*color15:  #C5C8C6
 
-Xft.autohint: 0
-!Xft.lcdfilter: lcddefault
-!Xft.hintstyle: hintslight
-Xft.hintstyle: hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-!Xft.rgba: rgb
-Xft.rgba: none
+Xft.autohint: false
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+!Xft.hintstyle: hintfull
+Xft.hinting: true
+Xft.antialias: true
+Xft.rgba: rgb
+!Xft.rgba: none
 Xft.dpi: 96
