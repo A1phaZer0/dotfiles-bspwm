@@ -155,3 +155,5 @@ function cse()
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/base16
 export WORKON_HOME=~/.python_virtual_env
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH=/home/motoko/Projects/jdk-11.0.2/bin:$PATH
