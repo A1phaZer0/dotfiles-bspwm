@@ -5,8 +5,8 @@
 !URxvt*boldFont:xft:3270Medium Nerd Font Mono:size=16:bold:antialias=true:style=Medium
 !URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:regular:antialias=true:style=Medium
 !URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=16:bold:antialias=true:style=Medium
-URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=13:regular:antialias=true:style=Medium
-URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=13:bold:antialias=true:style=Medium
+URxvt*font:xft:BitstreamVeraSansMono Nerd Font Mono:size=12:regular:antialias=true:style=Medium
+URxvt*boldFont:xft:BitstreamVeraSansMono Nerd Font Mono:size=12:bold:antialias=true:style=Medium
 URxvt*scrollBar: false
 URxvt*perl-ext-common: 
 URxvt*iso14755: false
@@ -19,7 +19,7 @@ URxvt*urgentOnBell: false
 !URxvt*externalBorder: 0
 !URxvt*borderLess: false
 !URxvt*fading: 30
-!URxvt*letterSpace: -1
+URxvt*letterSpace: -1
 
 URxvt*background: #3F3F3F
 URxvt*foreground: #DBDBDB
@@ -47,7 +47,8 @@ URxvt*color13:  #B294BB
 URxvt*color6:   #5E8D87
 URxvt*color14:  #8ABEB7
 ! WHI
-URxvt*color7:   #6C7A80
+!URxvt*color7:   #6C7A80
+URxvt*color7:   #A0A0A0
 URxvt*color15:  #C5C8C6
 
 Xft.autohint: false
