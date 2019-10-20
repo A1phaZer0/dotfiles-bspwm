@@ -140,6 +140,9 @@ autocmd BufNewFile,BufRead *.c,*.h setlocal noexpandtab tabstop=8 shiftwidth=8
 autocmd BufNewFile,BufRead *.cc,*.hh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 set cinoptions+=:0,g0,l1 "case/switch(C/C++) indent and publib/private/protected indent(C++)
 
+autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.json setlocal  conceallevel=0      "show quotes of JSON
+
+
 " set different ycm_extra_conf.py for c and c++ source files
 " typically it should be let b:variable, but here is a exception.
 " Use Bear(Build ear) to generate compile_commands.json at project root, so no
